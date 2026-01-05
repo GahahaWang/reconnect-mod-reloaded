@@ -45,7 +45,7 @@ public abstract class RMixin extends Screen {
 		if (!inSingleplayer && !inRealms) {
 			LOGGER.info(ANSI_YELLOW + "Player not in a singleplayer world or Realms, displaying the reconnect button");
 			MutableText text = (MutableText) Text.of("R");
-			this.addDrawableChild(new ReconnectButtonWidget(
+			this.addDrawableChild(ReconnectButtonWidget.build(
 					this.width / 2 - 102 + 208,
 					this.height / 4 + 120 + -16,
 					20,

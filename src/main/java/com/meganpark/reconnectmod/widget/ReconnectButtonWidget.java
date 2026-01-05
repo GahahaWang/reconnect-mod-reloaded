@@ -1,18 +1,12 @@
 package com.meganpark.reconnectmod.widget;
 
-import net.minecraft.client.gui.DrawContext;
 import net.minecraft.client.gui.widget.ButtonWidget;
 import net.minecraft.text.MutableText;
 
-public class ReconnectButtonWidget extends ButtonWidget {
+public class ReconnectButtonWidget{
 
-    // Defining Constructor with 6 specific arguments to match with ButtonWidget
-    public ReconnectButtonWidget(int x, int y, int width, int height, MutableText message, PressAction onPress, NarrationSupplier narrationSupplier) {
-        super(x, y, width, height, message, onPress, narrationSupplier);
+    public static ButtonWidget build(int x, int y, int width, int height, MutableText message, ButtonWidget.PressAction onPress, ButtonWidget.NarrationSupplier narrationSupplier) {
+        return new ButtonWidget.Builder(message, onPress).position(x, y).size(width, height).narrationSupplier(narrationSupplier).build();
     }
 
-    @Override
-    protected void drawIcon(DrawContext context, int mouseX, int mouseY, float deltaTicks) {
-
-    }
 }
